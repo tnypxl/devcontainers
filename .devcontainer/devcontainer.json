@@ -1,5 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.194.3/containers/ubuntu
 {
-    "extensions": [
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
+		"args": { "VARIANT": "hirsute" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"[csharp]": {
+			"editor.defaultFormatter": "ms-dotnettools.csharp",
+			"editor.formatOnSave": false,
+            "editor.tabSize": 4
+		},
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.tabSize": 4
+		},
+		"[json]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[markdown]": {
+			"editor.defaultFormatter": "mervin.markdown-formatter",
+			"editor.fontLigatures": true,
+			"editor.fontSize": 15,
+			"editor.lineHeight": 24,
+			"editor.lineNumbers": "off",
+			"editor.quickSuggestions": false,
+			"editor.wordWrap": "wordWrapColumn",
+			"editor.wordWrapColumn": 96
+		},
+		"[ruby]": {
+			"editor.defaultFormatter": "Shopify.rubocop-lsp",
+			"editor.tabSize": 2
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.tabSize": 4
+		},
+		"[yaml]": {
+			"editor.defaultFormatter": "redhat.vscode-yaml"
+		},
+	},
+
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
         "74th.json-yaml-schema-selector",
         "aaron-bond.better-comments",
         "alexkrechik.cucumberautocomplete",
@@ -148,4 +196,13 @@
         "ybaumes.highlight-trailing-white-spaces",
         "zhuangtongfa.material-theme"
     ]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
 }
